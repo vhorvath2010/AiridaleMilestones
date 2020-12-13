@@ -1,0 +1,5 @@
+lore: '&7&LBlocks broken: &A&L%amt%'
+valid_tools:
+  - PICKAXE
+  - AXE
+  - SHOVEL
