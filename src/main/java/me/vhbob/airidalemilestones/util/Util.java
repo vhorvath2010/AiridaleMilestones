@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +47,8 @@ public class Util {
             newLore.add("");
             newLore.add("");
         }
-        newLore.add(loreFormat.replaceAll("%amt%", broken + ""));
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        newLore.add(loreFormat.replaceAll("%amt%", formatter.format(broken)));
         ItemMeta meta = item.getItemMeta();
         meta.setLore(newLore);
         item.setItemMeta(meta);

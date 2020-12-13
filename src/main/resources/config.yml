@@ -1,4 +1,8 @@
+# This is the lore that is shown on tools. %amt% is the amount of blocks broken
 lore: '&7&LBlocks broken: &A&L%amt%'
+# This is the message sent to players when they reach a milestone
+messages:
+  milestone: '&7&L[&A&LMilestones&7&L]&A&LYou were given a reward for mining %blocks% blocks!'
 valid_tools:
   - PICKAXE
   - AXE

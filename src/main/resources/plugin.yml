@@ -3,3 +3,5 @@ main: me.vhbob.airidalemilestones.AiridaleMilestones
 version: 1.0.0
 author: Vhbob
 description: A mining milestones plugin for AiridaleMC
+depend:
+  - PlaceholderAPI
