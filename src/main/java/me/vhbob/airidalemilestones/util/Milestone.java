@@ -22,6 +22,7 @@ public class Milestone {
         this.recurring = recurring;
         this.commands = new ArrayList<>();
         this.items = new ArrayList<>();
+        AiridaleMilestones.getPlugin().getMilestoneManager().registerMilestone(this);
     }
 
     public int getRequirement() {

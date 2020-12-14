@@ -5,3 +5,16 @@ author: Vhbob
 description: A mining milestones plugin for AiridaleMC
 depend:
   - PlaceholderAPI
+commands:
+  AddMilestoneCommand:
+    description: Add a command as a reward for a milestone
+    permission: milestone.admin
+    permission-message: '§CYou do not have permission to do that!'
+    usage: '§C/AddMilestoneCommand [blocks #] [recurring? (true if recurring, otherwise false)] [command]'
+    aliases: [AddMilestoneCmd, amcmd]
+  AddMilestoneItem:
+    description: Add an item as a reward for a milestone
+    permission: milestone.admin
+    permission-message: '§CYou do not have permission to do that!'
+    usage: '§C/AddMilestoneItem [blocks #] [recurring? (true if recurring, otherwise false)]'
+    aliases: [ami, amitem]
