@@ -1,6 +1,7 @@
 package me.vhbob.airidalemilestones.commands;
 
 import me.vhbob.airidalemilestones.AiridaleMilestones;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,6 +21,12 @@ public class AddMilestoneCommand implements CommandExecutor {
                 }
                 // Register info
                 AiridaleMilestones.getPlugin().getMilestoneManager().registerReward(requirement, recurring, cmd);
+                commandSender.sendMessage(ChatColor.GREEN + "Added the command as a reward for " + requirement + " blocks");
+                if (recurring) {
+                    commandSender.sendMessage(ChatColor.GREEN + "Milestone is recurring");
+                } else {
+                    commandSender.sendMessage(ChatColor.RED + "Milestone is not recurring");
+                }
                 return true;
             }
         }

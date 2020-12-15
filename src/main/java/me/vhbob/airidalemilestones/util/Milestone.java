@@ -4,6 +4,7 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.vhbob.airidalemilestones.AiridaleMilestones;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -54,8 +55,18 @@ public class Milestone {
         String message = AiridaleMilestones.getPlugin().getConfig().getString("messages.milestone");
         message = ChatColor.translateAlternateColorCodes('&', message);
         DecimalFormat formatter = new DecimalFormat("#,###");
-        message.replace("%blocks%", formatter.format(requirement));
+        message = message.replace("%blocks%", formatter.format(requirement));
         player.sendMessage(message);
+    }
+
+    public void save(YamlConfiguration config) {
+        if (recurring) {
+            config.set("recurring." + requirement + ".commands", commands);
+            config.set("recurring." + requirement + ".items", items);
+        } else {
+            config.set("once." + requirement + ".commands", commands);
+            config.set("once." + requirement + ".items", items);
+        }
     }
 
 }

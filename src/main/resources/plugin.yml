@@ -18,3 +18,15 @@ commands:
     permission-message: '§CYou do not have permission to do that!'
     usage: '§C/AddMilestoneItem [blocks #] [recurring? (true if recurring, otherwise false)]'
     aliases: [ami, amitem]
+  ClearMilestone:
+    description: Clear a milestone's rewards
+    permission: milestone.admin
+    permission-message: '§CYou do not have permission to do that!'
+    usage: '§C/ClearMilestone [block #] [recurring]'
+    aliases: [cms, cmilestone]
+  ListMilestones:
+    description: List all active milestones
+    permission: milestone.admin
+    permission-message: '§CYou do not have permission to do that!'
+    usage: '§C/ListMilestones'
+    aliases: [lms, listms]
