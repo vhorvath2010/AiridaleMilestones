@@ -22,7 +22,7 @@ public class Util {
             for (String line : lore) {
                 if (line.contains(loreNoAmt)) {
                     String blocksAsString = line.replace(loreNoAmt, "");
-                    return Integer.parseInt(blocksAsString);
+                    return Integer.parseInt(blocksAsString.replace(",", ""));
                 }
             }
         }
@@ -51,6 +51,7 @@ public class Util {
         formatter.setGroupingUsed(true);
         formatter.setGroupingSize(3);
         newLore.add(loreFormat.replaceAll("%amt%", formatter.format(broken)));
+        System.out.println("Updating " + formatter.format(broken));
         ItemMeta meta = item.getItemMeta();
         meta.setLore(newLore);
         item.setItemMeta(meta);
