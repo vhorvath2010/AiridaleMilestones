@@ -1,6 +1,6 @@
 name: AiridaleMilestones
 main: me.vhbob.airidalemilestones.AiridaleMilestones
-version: 1.0.0
+version: 1.0.1
 author: Vhbob
 description: A mining milestones plugin for AiridaleMC
 depend:

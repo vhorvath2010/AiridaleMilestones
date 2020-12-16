@@ -14,7 +14,11 @@ public class ListMilestones implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("ListMilestones")) {
             commandSender.sendMessage(ChatColor.GREEN + "Active milestones");
             for (Milestone milestone : AiridaleMilestones.getPlugin().getMilestoneManager().getActiveMilestones()) {
-                commandSender.sendMessage(milestone.getRequirement() + ": " + milestone.isRecurring());
+                if (milestone.isRecurring()) {
+                    commandSender.sendMessage(ChatColor.GREEN + "Recurring milestone: " + milestone.getRequirement() + " blocks");
+                } else {
+                    commandSender.sendMessage(ChatColor.RED + "One-time milestone: " + milestone.getRequirement() + " blocks");
+                }
             }
             return true;
         }

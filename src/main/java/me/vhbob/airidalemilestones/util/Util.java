@@ -47,7 +47,9 @@ public class Util {
             newLore.add("");
             newLore.add("");
         }
-        DecimalFormat formatter = new DecimalFormat("#,###");
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        formatter.setGroupingUsed(true);
+        formatter.setGroupingSize(3);
         newLore.add(loreFormat.replaceAll("%amt%", formatter.format(broken)));
         ItemMeta meta = item.getItemMeta();
         meta.setLore(newLore);
