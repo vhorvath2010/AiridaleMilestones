@@ -97,12 +97,16 @@ public class MilestoneManager {
             YamlConfiguration config = new YamlConfiguration();
             config.load(milestonesFile);
             // load all recurring milestones
-            for (String blocksString : config.getConfigurationSection("recurring").getKeys(false)) {
-                loadMilestone(config, "recurring." + blocksString, true, Integer.parseInt(blocksString));
+            if (config.contains("recurring")) {
+                for (String blocksString : config.getConfigurationSection("recurring").getKeys(false)) {
+                    loadMilestone(config, "recurring." + blocksString, true, Integer.parseInt(blocksString));
+                }
             }
-            // load non recurring
-            for (String blocksString : config.getConfigurationSection("once").getKeys(false)) {
-                loadMilestone(config, "once." + blocksString, false, Integer.parseInt(blocksString));
+            if (config.contains("once")) {
+                // load non recurring
+                for (String blocksString : config.getConfigurationSection("once").getKeys(false)) {
+                    loadMilestone(config, "once." + blocksString, false, Integer.parseInt(blocksString));
+                }
             }
         }
     }
